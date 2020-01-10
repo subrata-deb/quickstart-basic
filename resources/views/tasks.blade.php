@@ -23,6 +23,10 @@
                             <div class="col-sm-6">
                                 <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
                             </div>
+                            <label for="task-name" class="col-sm-4 control-label">Priority</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="priority" id="task-priority" class="form-control" value="{{ old('task') }}">
+                            </div>
                         </div>
 
                         <!-- Add Task Button -->
@@ -48,12 +52,13 @@
                         <table class="table table-striped task-table">
                             <thead>
                                 <th>Task</th>
-                                <th>&nbsp;</th>
+                                <th>Priority</th>
                             </thead>
                             <tbody>
                                 @foreach ($tasks as $task)
                                     <tr>
                                         <td class="table-text"><div>{{ $task->name }}</div></td>
+                                        <td class="table-text"><div>{{ $task->priority }}</div></td>
 
                                         <!-- Task Delete Button -->
                                         <td>
